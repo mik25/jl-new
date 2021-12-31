@@ -28,10 +28,10 @@ const search_cache = {
 }
 
 const manifest = {
-	id: "TopDog IPTV",
+	id: "JL New IPTV",
 	version: package.version,
 	logo: "https://www.dropbox.com/s/y1qle6s8x1fh5sg/Top-Dog-IPTV.jpg?dl=1",
-	catalogs: [{type:'tv',id:'TopDog IPTV',name:'TopDog IPTV',extra: [
+	catalogs: [{type:'tv',id:'JL New IPTV',name:'JL New IPTV',extra: [
 		{
 		  name: "genre",
 		  options: Object.keys(countries),
@@ -39,7 +39,7 @@ const manifest = {
 		}
 	  ]},{
 		type: 'tv',
-		id: 'TopDog IPTV_search',
+		id: 'JL New IPTV_search',
 		name: 'search',
 		extra: [
 			{
@@ -50,9 +50,9 @@ const manifest = {
 	  }],
 	resources: ["catalog", "meta", "stream"],
 	types: ['tv'],
-	name: "TopDog IPTV",
+	name: "JL New IPTV",
 	description: "Collection Of Cracked UK IPTV",
-	idPrefixes: ['TopDog IPTV']
+	idPrefixes: ['JL New IPTV']
 }
 function match(r,s,i){
 	var m = s.match(r);
@@ -92,7 +92,7 @@ function m3uToMeta(data,country){
 		if(!name) continue;
 		var img = match(/tvg-logo="([^"]+)"/,item,1);
 		var stream = match(/\n(http[^\n]+)/,item,1);
-		var id ='TopDog IPTV:'+country+'::'+name;
+		var id ='JL New IPTV:'+country+'::'+name;
 		if(metaID[id]==undefined){
 			metaID[id] = metas.length;
 			metas.push({
@@ -145,7 +145,7 @@ function getData(country){
 builder.defineCatalogHandler(function(args, cb) {
 	// filter the dataset object and only take the requested type
 	return new Promise((resolve, reject) => {
-		if (args.id == 'TopDog IPTV_search'){
+		if (args.id == 'JL New IPTV_search'){
 			if(!args.extra.search){
 				return resolve({});
 			}
@@ -190,7 +190,7 @@ builder.defineCatalogHandler(function(args, cb) {
 
 // takes function(args, cb)
 builder.defineStreamHandler(function(args, cb) {
-	if (args.type === 'tv' && args.id.startsWith('TopDog IPTV:')) {
+	if (args.type === 'tv' && args.id.startsWith('JL New IPTV:')) {
 		return new Promise((resolve, reject) => {
 			genr = args.id.split(':',2)[1].split('::')[0];
 			getData(genr).then(function(values) {
@@ -215,7 +215,7 @@ builder.defineStreamHandler(function(args, cb) {
 })
 
 builder.defineMetaHandler(function(args) {
-	if (args.type === 'tv' && args.id.startsWith('TopDog IPTV:')) {
+	if (args.type === 'tv' && args.id.startsWith('JL New IPTV:')) {
 		return new Promise((resolve, reject) => {
 			genr = args.id.split(':',2)[1].split('::')[0];
 			getData(genr).then(function(values) {
