@@ -30,7 +30,7 @@ const search_cache = {
 const manifest = {
 	id: "JL New IPTV",
 	version: package.version,
-	logo: "https://www.dropbox.com/s/y1qle6s8x1fh5sg/Top-Dog-IPTV.jpg?dl=1",
+	logo: "https://raw.githubusercontent.com/mik25/jl-new/master/hardcorehems.png",
 	catalogs: [{type:'tv',id:'JL New IPTV',name:'JL New IPTV',extra: [
 		{
 		  name: "genre",
